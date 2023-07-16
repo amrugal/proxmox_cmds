@@ -1,0 +1,4 @@
+pvcreate /dev/sdb1
+vgcreate vg1 /dev/sdb1
+lvcreate --thinpool vg1/tp1 --size 100G
+lvcreate --virtualsize 50G --thin vg1/tp1 --name vm1
